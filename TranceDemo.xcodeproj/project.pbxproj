@@ -14,6 +14,7 @@
 		344C5DA51BBB9756007F6FFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 344C5DA31BBB9756007F6FFA /* LaunchScreen.storyboard */; };
 		344C5DB01BBB9756007F6FFA /* TranceDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C5DAF1BBB9756007F6FFA /* TranceDemoTests.swift */; };
 		344C5DBB1BBB9756007F6FFA /* TranceDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C5DBA1BBB9756007F6FFA /* TranceDemoUITests.swift */; };
+		A2F61DE380FE6AC683FC6F8F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA5969C8E567EF614D5C66 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		344C5DB61BBB9756007F6FFA /* TranceDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranceDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		344C5DBA1BBB9756007F6FFA /* TranceDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranceDemoUITests.swift; sourceTree = "<group>"; };
 		344C5DBC1BBB9756007F6FFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89DA5969C8E567EF614D5C66 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		89FD5874ECE0299BE8E61728 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A6CB89E5B6C6F90E8D725B02 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2F61DE380FE6AC683FC6F8F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,8 @@
 				344C5DAE1BBB9756007F6FFA /* TranceDemoTests */,
 				344C5DB91BBB9756007F6FFA /* TranceDemoUITests */,
 				344C5D981BBB9756007F6FFA /* Products */,
+				82B6EE68CD2E563A0EE2A3ED /* Pods */,
+				9C8E91007CE3AE92506355AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +132,23 @@
 			path = TranceDemoUITests;
 			sourceTree = "<group>";
 		};
+		82B6EE68CD2E563A0EE2A3ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				89FD5874ECE0299BE8E61728 /* Pods.debug.xcconfig */,
+				A6CB89E5B6C6F90E8D725B02 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9C8E91007CE3AE92506355AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89DA5969C8E567EF614D5C66 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 344C5DBF1BBB9756007F6FFA /* Build configuration list for PBXNativeTarget "TranceDemo" */;
 			buildPhases = (
+				36FA360A2C2C5A246FCFEF16 /* Check Pods Manifest.lock */,
 				344C5D931BBB9756007F6FFA /* Sources */,
 				344C5D941BBB9756007F6FFA /* Frameworks */,
 				344C5D951BBB9756007F6FFA /* Resources */,
+				D6B16BACBBE1C014DC9FE58D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,6 +275,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36FA360A2C2C5A246FCFEF16 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D6B16BACBBE1C014DC9FE58D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		344C5D931BBB9756007F6FFA /* Sources */ = {
@@ -396,6 +455,7 @@
 		};
 		344C5DC01BBB9756007F6FFA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89FD5874ECE0299BE8E61728 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TranceDemo/Info.plist;
@@ -407,6 +467,7 @@
 		};
 		344C5DC11BBB9756007F6FFA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6CB89E5B6C6F90E8D725B02 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TranceDemo/Info.plist;
@@ -483,6 +544,7 @@
 				344C5DC11BBB9756007F6FFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		344C5DC21BBB9756007F6FFA /* Build configuration list for PBXNativeTarget "TranceDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +553,7 @@
 				344C5DC41BBB9756007F6FFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		344C5DC51BBB9756007F6FFA /* Build configuration list for PBXNativeTarget "TranceDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +562,7 @@
 				344C5DC71BBB9756007F6FFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
