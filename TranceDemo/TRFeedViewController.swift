@@ -12,9 +12,24 @@ import MobileCoreServices
 import AVFoundation
 
 class TRFeedViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    private struct Constants {
+        static let imageCropperSegue = "imageCropperSegue"
+    }
+
+    private var newImage : UIImage? = nil
+    private var shouldShowImageCropper = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if shouldShowImageCropper {
+            shouldShowImageCropper = false;
+            performSegueWithIdentifier(Constants.imageCropperSegue, sender: self)
+        }
     }
 
     @IBAction func cameraButtonTapped(sender: AnyObject) {
@@ -33,8 +48,6 @@ class TRFeedViewController: UIViewController, UIImagePickerControllerDelegate, U
             }
         }
     }
-    
-    @IBOutlet weak var imageView: UIImageView!
 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         // if info[UIImagePickerControllerMediaType] == kUTTypeMovie
@@ -55,7 +68,8 @@ class TRFeedViewController: UIViewController, UIImagePickerControllerDelegate, U
                 print("halfTimeImage error2")
             }
             if let halfTimeImage = halfTimeImage as CGImage! {
-                imageView.image = UIImage(CGImage: halfTimeImage)
+                newImage = UIImage(CGImage: halfTimeImage)
+                shouldShowImageCropper = true;
             }
         }
         
@@ -64,5 +78,26 @@ class TRFeedViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func unwindToFeedViewController(segue: UIStoryboardSegue) {
+        NSLog("Unwind to FeedViewController")
+        if let imageCropperVC = segue.sourceViewController as? TRImageCropperViewController {
+            print("Coming from imageCropperVC")
+            newImage = imageCropperVC.image
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case Constants.imageCropperSegue:
+                if let vc = segue.destinationViewController as? TRImageCropperViewController{
+                    vc.image = newImage
+                }
+            default:
+                break
+            }
+        }
     }
 }

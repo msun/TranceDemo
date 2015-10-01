@@ -17,6 +17,8 @@ class TRNavigationController: UINavigationController {
     override func viewDidLoad() {
         let barImage = UIImage(named: Constants.navBarImageName)!.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .Stretch)
         UINavigationBar.appearance().setBackgroundImage(barImage, forBarMetrics: .Default)
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        UIBarButtonItem.appearance().tintColor = UIColor.whiteColor()
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
