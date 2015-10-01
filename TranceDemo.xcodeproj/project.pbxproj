@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		344C5D9B1BBB9756007F6FFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C5D9A1BBB9756007F6FFA /* AppDelegate.swift */; };
-		344C5D9D1BBB9756007F6FFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C5D9C1BBB9756007F6FFA /* ViewController.swift */; };
 		344C5DA01BBB9756007F6FFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 344C5D9E1BBB9756007F6FFA /* Main.storyboard */; };
 		344C5DA21BBB9756007F6FFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 344C5DA11BBB9756007F6FFA /* Assets.xcassets */; };
 		344C5DA51BBB9756007F6FFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 344C5DA31BBB9756007F6FFA /* LaunchScreen.storyboard */; };
 		344C5DB01BBB9756007F6FFA /* TranceDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C5DAF1BBB9756007F6FFA /* TranceDemoTests.swift */; };
 		344C5DBB1BBB9756007F6FFA /* TranceDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C5DBA1BBB9756007F6FFA /* TranceDemoUITests.swift */; };
 		344C5DC91BBCB94A007F6FFA /* TRNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C5DC81BBCB94A007F6FFA /* TRNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
+		344C5DCB1BBCE0B8007F6FFA /* TRFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C5DCA1BBCE0B8007F6FFA /* TRFeedViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A2F61DE380FE6AC683FC6F8F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA5969C8E567EF614D5C66 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +38,6 @@
 /* Begin PBXFileReference section */
 		344C5D971BBB9756007F6FFA /* TranceDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TranceDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		344C5D9A1BBB9756007F6FFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		344C5D9C1BBB9756007F6FFA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		344C5D9F1BBB9756007F6FFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		344C5DA11BBB9756007F6FFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		344C5DA41BBB9756007F6FFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		344C5DBA1BBB9756007F6FFA /* TranceDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranceDemoUITests.swift; sourceTree = "<group>"; };
 		344C5DBC1BBB9756007F6FFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		344C5DC81BBCB94A007F6FFA /* TRNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRNavigationController.swift; sourceTree = "<group>"; };
+		344C5DCA1BBCE0B8007F6FFA /* TRFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TRFeedViewController.swift; path = TranceDemo/TRFeedViewController.swift; sourceTree = "<group>"; };
 		89DA5969C8E567EF614D5C66 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		89FD5874ECE0299BE8E61728 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A6CB89E5B6C6F90E8D725B02 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +84,7 @@
 		344C5D8E1BBB9756007F6FFA = {
 			isa = PBXGroup;
 			children = (
+				344C5DCA1BBCE0B8007F6FFA /* TRFeedViewController.swift */,
 				344C5D991BBB9756007F6FFA /* TranceDemo */,
 				344C5DAE1BBB9756007F6FFA /* TranceDemoTests */,
 				344C5DB91BBB9756007F6FFA /* TranceDemoUITests */,
@@ -107,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				344C5D9A1BBB9756007F6FFA /* AppDelegate.swift */,
-				344C5D9C1BBB9756007F6FFA /* ViewController.swift */,
 				344C5DC81BBCB94A007F6FFA /* TRNavigationController.swift */,
 				344C5D9E1BBB9756007F6FFA /* Main.storyboard */,
 				344C5DA11BBB9756007F6FFA /* Assets.xcassets */,
@@ -318,7 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				344C5DC91BBCB94A007F6FFA /* TRNavigationController.swift in Sources */,
-				344C5D9D1BBB9756007F6FFA /* ViewController.swift in Sources */,
+				344C5DCB1BBCE0B8007F6FFA /* TRFeedViewController.swift in Sources */,
 				344C5D9B1BBB9756007F6FFA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
