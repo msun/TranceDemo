@@ -13,12 +13,16 @@ class TRImageCropperViewController: UIViewController {
         static let unwindToFeedViewControllerSegue = "unwindToFeedViewControllerSegue"
     }
 
-    @IBOutlet weak var scrollView: UIScrollView!
-    var image : UIImage? = nil
+    @IBOutlet weak var imageView: UIImageView!
+    var image : UIImage? = nil {
+        didSet {
+            imageView?.image = image
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.backgroundColor = UIColor.orangeColor()
+        imageView.image = image;
     }
 
     @IBAction func doneTapped(sender: AnyObject) {
@@ -28,7 +32,7 @@ class TRImageCropperViewController: UIViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case Constants.unwindToFeedViewControllerSegue:
-                if let vc = segue.destinationViewController as? TRFeedViewController{
+                if let _ = segue.destinationViewController.contentViewController as? TRFeedViewController{
                     print("prepare unwindToFeedViewControllerSegue")
                 }
             default:

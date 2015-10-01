@@ -92,7 +92,7 @@ class TRFeedViewController: UIViewController, UIImagePickerControllerDelegate, U
         if let identifier = segue.identifier {
             switch identifier {
             case Constants.imageCropperSegue:
-                if let vc = segue.destinationViewController as? TRImageCropperViewController{
+                if let vc = segue.destinationViewController.contentViewController as? TRImageCropperViewController {
                     vc.image = newImage
                 }
             default:
