@@ -40,4 +40,18 @@ class TRImageCropperViewController: UIViewController {
             }
         }
     }
+
+    @IBAction func cropTapped(sender: AnyObject) {
+        if let width = image?.size.width, height = image?.size.height {
+            let rect = CGRectMake(width / 4, height / 4, width / 2, height / 2)
+            if let croppedImage = CGImageCreateWithImageInRect(image?.CGImage, rect) {
+                image = UIImage(CGImage: croppedImage)
+            } else {
+                print("cropped failed1")
+            }
+        } else {
+            print("cropped failed2")
+        }
+        
+    }
 }
