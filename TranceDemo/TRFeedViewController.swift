@@ -58,6 +58,7 @@ class TRFeedViewController: UIViewController, UIImagePickerControllerDelegate, U
             let duration = sourceAsset.duration
             let halfTime = CMTimeMultiplyByFloat64(duration, 0.5)
             let generator = AVAssetImageGenerator(asset: sourceAsset)
+            generator.appliesPreferredTrackTransform = true
             var actualTime : CMTime = CMTimeMake(0, 0)
             var halfTimeImage : CGImage? = nil
             do {
@@ -84,7 +85,9 @@ class TRFeedViewController: UIViewController, UIImagePickerControllerDelegate, U
         NSLog("Unwind to FeedViewController")
         if let imageCropperVC = segue.sourceViewController as? TRImageCropperViewController {
             print("Coming from imageCropperVC")
-            newImage = imageCropperVC.image
+            if let image = imageCropperVC.image {
+                newImage = image
+            }
         }
     }
     
