@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xtx-99-wgx">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -59,16 +58,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hXF-vj-AIx">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tqq-Rb-g3A">
                                 <rect key="frame" x="20" y="72" width="560" height="520"/>
-                            </imageView>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fit-c7-WSL">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="hXF-vj-AIx">
+                                        <rect key="frame" x="0.0" y="29" width="560" height="453"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iv4-TK-cqK">
+                                        <rect key="frame" x="0.0" y="490" width="560" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DqI-xW-Age" firstAttribute="top" secondItem="hXF-vj-AIx" secondAttribute="bottom" constant="8" symbolic="YES" id="Sws-jI-5Fg"/>
-                            <constraint firstItem="hXF-vj-AIx" firstAttribute="leading" secondItem="5r5-md-nOp" secondAttribute="leadingMargin" id="XdO-We-dtq"/>
-                            <constraint firstItem="hXF-vj-AIx" firstAttribute="top" secondItem="R2c-Za-5XT" secondAttribute="bottom" constant="8" symbolic="YES" id="r1J-hu-2IO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hXF-vj-AIx" secondAttribute="trailing" id="wRN-oK-ICH"/>
+                            <constraint firstItem="Tqq-Rb-g3A" firstAttribute="trailing" secondItem="5r5-md-nOp" secondAttribute="trailingMargin" id="524-6w-533"/>
+                            <constraint firstItem="Tqq-Rb-g3A" firstAttribute="leading" secondItem="5r5-md-nOp" secondAttribute="leadingMargin" id="is5-xt-nfM"/>
+                            <constraint firstItem="DqI-xW-Age" firstAttribute="top" secondItem="Tqq-Rb-g3A" secondAttribute="bottom" constant="8" symbolic="YES" id="qbm-BQ-ETu"/>
+                            <constraint firstItem="Tqq-Rb-g3A" firstAttribute="top" secondItem="R2c-Za-5XT" secondAttribute="bottom" constant="8" symbolic="YES" id="yIp-OE-hvv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Crop Image" id="dvt-uy-oWp">
